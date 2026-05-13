@@ -5,25 +5,170 @@
     <link rel="icon" type="image/x-icon" href="">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bruder keine Ahnung</title>
+    <title>Nürburgring Nordschleife</title>
   </head>
-  <body>
-    
+  <body>   
     <header>
       <nav>
-        <ul>
-          <li><a href="index.html">Max Mustermann</a></li>
-          <li><a href="">Lorem Ipsum</a></li>
-          <li><a href="">Lorem Ipsum</a></li>
-          <li><a href="">Lorem Ipsum</a></li>
-        </ul>
+        <div class="nav-logo">
+          <a href="#start">Nordschleife</a>
+        </div>
+        <div class="nav-links">
+          <a href="#fakten">Fakten</a>
+          <a href="#layouts">Layouts</a>
+          <a href="#rekorde">Rekorde</a>
+          <a href="#livedaten">Live Streckendaten</a>
+        </div>
       </nav>
     </header>
     <main>
+      <section class="oben" id="start">
+        <div class="oben-bg"></div>
+        <div class="oben-bg-bild">
+          <img src="img/SVG/NBR.svg">
+        </div>
+        <div class="oben-nbr">NBR</div>
+        <p class="oben-kicker">Eifel, Deutschland</p>
+        <h1 class="oben-titel">Die <em>Grüne</em> Hölle</h1>
+        <p class="oben-text">
+          20,832 Kilometer Asphalt. 73 Kurven. 300 Meter Höhenunterschied. 
+          Die Nürburgring-Nordschleife ist die anspruchsvollste 
+          und gefürchtetste Rennstrecke der Welt.
+        </p>
+        <div class="oben-daten">
+          <div>
+            <div class="oben-val">20,8<span>km</span></div>
+            <div class="oben-label">Streckenlänge</div>
+          </div>
+          <div>
+            <div class="oben-val">73</div>
+            <div class="oben-label">Kurven</div>
+          </div>
+          <div>
+            <div class="oben-val">300<span>m</span></div>
+            <div class="oben-label">Höhenunterschied</div>
+          </div>
+          <div>
+            <div class="oben-val">1927</div>
+            <div class="oben-label">Eröffnet</div>
+          </div>
+        </div>
+      </section>
 
+      <div class="divider"></div>
+
+      <section id="fakten">
+        <p class="section-label">Streckencharakter</p>
+        <h2 class="section-title">Harte<br>Zahlen</h2>
+        <div class="fakten-grid">
+          <div class="fakten-cell">
+            <div class="fakten-num">20<span class="fakten-einheit">832m</span></div>
+            <div class="fakten-beschreibung">Strecke</div>
+          </div>
+          <div class="fakten-cell">
+            <div class="fakten-num">617<span class="fakten-einheit">m</span></div>
+            <div class="fakten-beschreibung">Höchster Punkt über Meerespiegel</div>
+          </div>
+          <div class="fakten-cell">
+            <div class="fakten-num">17<span class="fakten-einheit">°</span></div>
+            <div class="fakten-beschreibung">Maximale Neigung</div>
+          </div>
+          <div class="fakten-cell">
+            <div class="fakten-num">6,0<span class="fakten-einheit">min</span></div>
+            <div class="fakten-beschreibung">Absoluter Rundenrekord (PKW)</div>
+          </div>
+          <div class="fakten-cell">
+            <div class="fakten-num">200+</div>
+            <div class="fakten-beschreibung">Renntage pro Jahr (inkl. Touristenfahrten)</div>
+          </div>
+          <div class="fakten-cell">
+            <div class="fakten-num">28<span class="fakten-einheit">km²</span></div>
+            <div class="fakten-beschreibung">Eingeschlossenes Gelände</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="layouts">
+        <h2 class="section-title">Layouts</h2>
+      </section>
+      <div class="quote-section">
+       <blockquote>
+          <p>„Wenn du die Nordschleife liebst, weißt du, dass sie dich nie wirklich liebt."</p>
+          <cite>— Jackie Stewart, der ihr den Namen <strong>"Grüne Hölle"</strong> gab</cite>
+       </blockquote>
+      </div>
+
+      <section id="rekorde">
+        <p class="section-label">Bestzeiten (Offiziell)</p>
+        <h2 class="section-title">Rundenrekorde</h2>
+        <table class="rekorde-table">
+          <thead>
+            <tr>
+              <th>Kategorie</th>
+              <th>Zeit</th>
+              <th>Fahrzeug</th>
+              <th>Jahr</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Prototypen</strong>
+                <div class="rekord-car">Porsche 919 Hybrid Evo</div>
+              </td>
+              <td><div class="zeit">5:19.546</div></td>
+              <td>Porsche 919 Hybrid Evo</td>
+              <td>2018</td>
+              <td><a href="https://www.youtube.com/watch?v=KsLi7HgSuhI" target=_blank><img class="yt" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"></a></td>
+              <td><span class="badge">Weltrekord</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Serienfahrzeug</strong>
+                <div class="rekord-car">Mercedes-AMG ONE</div>
+              </td>
+              <td><div class="zeit">6:29.090</div></td>
+              <td>Mercedes-AMG ONE</td>
+              <td>2024</td>
+              <td><a href="https://www.youtube.com/watch?v=sYy_cNMhlhQ" target=_blank><img class="yt" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Elektrisch</strong>
+                <div class="rekord-car">Volkswagen ID.R</div>
+              </td>
+              <td><div class="zeit">6:05.336</div></td>
+              <td>VW ID.R</td>
+              <td>2019</td>
+              <td><a href="https://www.youtube.com/watch?v=lRHIiJjWhWo" target=_blank><img class="yt" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+              <strong>Motorrad</strong>
+              <div class="rekord-car">Honda RC30</div>
+              </td>
+              <td><div class="zeit">7:49.710</div></td>
+              <td>Honda RC30</td>
+              <td>1993</td>
+              <td><a href="https://youtu.be/H8PdfYTGteE?t=156" target=_blank><img class="yt" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"></a></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="livedaten">
+        <h2 class="section-title">Livedaten</h2>
+      </section>
     </main>
     <footer>
-
+      <div class="footer-logo">Nordschleife</div>
+      <p>Nürburgring - Eifel, Rheinland-Pfalz, Deutschland</p>
+      <p>Eine Hommage an die <em><strong>Grüne Hölle</strong></em></p>
     </footer>
   </body>
 </html>
