@@ -244,6 +244,11 @@ section {padding: 7rem 3rem;}
     align-items: center;
     justify-content: center;
 }
+.quote-bild img {
+    align-self: center;
+    border-radius: 50%;
+    opacity: 50%;
+}
 blockquote {
     max-width: 780px;
     text-align: center;
