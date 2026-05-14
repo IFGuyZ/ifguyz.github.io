@@ -7,6 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nürburgring Nordschleife</title>
   </head>
+
+  <script>
+    async function wetterLaden() {
+      const url =
+        "https://api.open-meteo.com/v1/forecast?latitude=50.3333&longitude=6.95&models=best_match&current=temperature_2m,relative_humidity_2m,precipitation,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m&timezone=Europe%2FBerlin"
+        try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const c = data.current;
+
+        function windRichtung(grad) {
+          const richtungen = ["N","NO","O","SO","S","SW","W","NW"];
+          return richtungen[Math.round(grad / 45) % 8];
+        }
+
+        document.getElementById("val-temp").innerHTML =
+          `${c.temperature_2m}<span class="wetter-einheit">°C</span>`;
+        document.getElementById("val-regen").innerHTML =
+          `${c.precipitation}<span class="wetter-einheit">mm</span>`;
+        document.getElementById("val-wind").innerHTML =
+          `${c.wind_speed_10m}<span class="wetter-einheit">km/h ${windRichtung(c.wind_direction_10m)}</span>`;
+        document.getElementById("val-boen").innerHTML =
+          `${c.wind_gusts_10m}<span class="wetter-einheit">km/h</span>`;
+        document.getElementById("val-luftfeuchte").innerHTML =
+          `${c.relative_humidity_2m}<span class="wetter-einheit">%</span>`;
+        document.getElementById("val-druck").innerHTML =
+          `${c.surface_pressure}<span class="wetter-einheit">hPa</span>`;
+
+        const zeit = new Date(c.time);
+        document.getElementById("wetter-update").textContent =
+          `Zuletzt aktualisiert: ${zeit.toLocaleTimeString("de-DE")} Uhr`;
+
+      } catch (err) {
+        document.getElementById("wetter-update").textContent =
+          "Wetterdaten konnten nicht geladen werden.";
+        console.error(err);
+      }
+    }
+
+    wetterLaden();
+    setInterval(wetterLaden, 5 * 60 * 1000);
+  </script>
+
+
+
+
+
+
   <body>   
     <header>
       <nav>
@@ -15,7 +63,6 @@
         </div>
         <div class="nav-links">
           <a href="#fakten">Fakten</a>
-          <a href="#layouts">Layouts</a>
           <a href="#rekorde">Rekorde</a>
           <a href="#livedaten">Live Streckendaten</a>
         </div>
@@ -164,12 +211,46 @@
       </section>
 
       <section id="livedaten">
-        <h2 class="section-title">Livedaten</h2>
+        <p class="section-label">Nürburgring · Live</p>
+        <h2 class="section-title">Streckenwetter</h2>
+
+        <div class="wetter-grid" id="wetter-grid">
+          <div class="wetter-cell" id="w-temp">
+            <div class="wetter-val" id="val-temp">–</div>
+            <div class="wetter-label">Temperatur</div>
+          </div>
+          <div class="wetter-cell" id="w-regen">
+            <div class="wetter-val" id="val-regen">–</div>
+            <div class="wetter-label">Niederschlag</div>
+          </div>
+          <div class="wetter-cell" id="w-wind">
+            <div class="wetter-val" id="val-wind">–</div>
+            <div class="wetter-label">Wind</div>
+          </div>
+          <div class="wetter-cell" id="w-boen">
+            <div class="wetter-val" id="val-boen">–</div>
+            <div class="wetter-label">Böen</div>
+          </div>
+          <div class="wetter-cell" id="w-luftfeuchte">
+            <div class="wetter-val" id="val-luftfeuchte">–</div>
+            <div class="wetter-label">Luftfeuchte</div>
+          </div>
+          <div class="wetter-cell" id="w-druck">
+            <div class="wetter-val" id="val-druck">–</div>
+            <div class="wetter-label">Luftdruck</div>
+          </div>
+        </div>
+
+        <p class="wetter-update" id="wetter-update">Wird geladen…</p>
+      </section>
+
+
+
       </section>
     </main>
     <footer>
       <div class="footer-logo">Nordschleife</div>
-      <p>Nürburgring - Eifel, Rheinland-Pfalz, Deutschland</p>
+      <a href="https://maps.app.goo.gl/nBLVvrPZBHRWg4JL8" target="_blank">Nürburgring - Eifel, Rheinland-Pfalz, Deutschland</a>
       <p>Eine Hommage an die <em><strong>Grüne Hölle</strong></em></p>
     </footer>
   </body>

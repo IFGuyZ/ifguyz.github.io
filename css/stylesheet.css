@@ -48,6 +48,7 @@ nav {
     color: var(--grünehölle);
 }
 .nav-logo a {
+    font-family:'Cal Sans', sans-serif;
     text-decoration: none;
     color: inherit;
 }
@@ -96,11 +97,13 @@ nav {
     max-width: 25%;
     max-height: auto;
 }
+
 .oben-nbr {
     position: absolute;
     top: 50%;
     right: -4rem;
     transform: translateY(-60%);
+    font-family:'Cal Sans', sans-serif;
     font-size: clamp(14rem, 30vw, 28rem);
     line-height: 1;
     color: rgba(255,255,255,0.025);
@@ -109,6 +112,7 @@ nav {
     pointer-events: none;
 }
 .oben-kicker {
+    font-family:'Cal Sans', sans-serif;
     font-weight: 400;
     font-size: 0.75rem;
     letter-spacing: 0.35em;
@@ -189,6 +193,7 @@ section {padding: 7rem 3rem;}
     margin-bottom: 1.2rem;
 }
 .section-title {
+    font-family:'Cal Sans', sans-serif;
     font-weight: 900;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     text-transform: uppercase;
@@ -306,12 +311,64 @@ blockquote cite {
     text-transform: uppercase;
     padding: 0.2rem 0.5rem;
     background: rgba(192, 57, 43, 0.15);
-    color: var(--grünehölle);
+    color: var(--text);
     border: 1px solid rgba(192,57,43,0.3);
 }
 .yt {
     max-width: 20%;
     max-height: auto;
+}
+
+.wetter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.wetter-cell {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+
+
+.wetter-val {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.wetter-einheit {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #888;
+  margin-left: 3px;
+}
+
+.wetter-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.wetter-update {
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .wetter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 footer {
@@ -323,13 +380,20 @@ footer {
     background: var(--surface);
 }
 .footer-logo {
+    font-family:'Cal Sans', sans-serif;
     font-weight: 900;
     font-size: 1.5rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text);
+    color: var(--grünehölle);
 }
 footer p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+footer a {
+    text-decoration: none;
     font-size: 0.78rem;
     color: var(--muted);
     letter-spacing: 0.05em;
