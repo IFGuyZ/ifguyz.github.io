@@ -50,21 +50,18 @@
     setInterval(wetterLaden, 5 * 60 * 1000);
   </script>
 
-
-
-
-
-
   <body>   
     <header>
       <nav>
         <div class="nav-logo">
-          <a href="#start">Nordschleife</a>
+          <a href="index.html#start">Nordschleife</a>
         </div>
         <div class="nav-links">
-          <a href="#fakten">Fakten</a>
-          <a href="#rekorde">Rekorde</a>
-          <a href="#livedaten">Live Streckendaten</a>
+          <a href="index.html#fakten">Fakten</a>
+          <a href="index.html#rekorde">Rekorde</a>
+          <a href="index.html#livedaten">Live Streckendaten</a>
+		  <a href="strecke.html">Streckenplan</a>
+		  <a href="index.html#anreise">Anreise</a>
         </div>
       </nav>
     </header>
@@ -72,7 +69,7 @@
       <section class="oben" id="start">
         <div class="oben-bg"></div>
         <div class="oben-bg-bild">
-          <img src="img/SVG/NBR.svg">
+          <img src="img/SVG/NBR.svg" style='max-width: 25%'>
         </div>
         <div class="oben-nbr">NBR</div>
         <p class="oben-kicker">Eifel, Deutschland</p>
@@ -134,6 +131,8 @@
           </div>
         </div>
       </section>
+	  
+	  <div class="divider"></div>
 
       <section>
         <div class="quote-section">
@@ -146,6 +145,8 @@
         </blockquote>
         </div>
       </section>
+	  
+	  <div class="divider"></div>
 
       <section id="rekorde">
         <p class="section-label">Bestzeiten (Offiziell)</p>
@@ -209,7 +210,9 @@
           </tbody>
         </table>
       </section>
-
+	  
+	  <div class="divider"></div>
+	  
       <section id="livedaten">
         <p class="section-label">Nürburgring · Live</p>
         <h2 class="section-title">Streckenwetter</h2>
@@ -242,11 +245,30 @@
         </div>
 
         <p class="wetter-update" id="wetter-update">Wird geladen…</p>
-      </section>
-
-
-
-      </section>
+		</section>
+		
+		<div class="divider"></div>
+		
+		<section id="anreise">
+			<p class="section-label">Ankunft</p>
+			<h2 class="section-title">Anreise</h2>
+			<div class="maps">
+				<div class="maps-map">
+					<iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Otto-Flimm-Stra%C3%9Fe%20N%C3%BCrburg+(N%C3%BCrburgring)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+					<a href='https://www.acadoo.de/leistungen/ghostwriter-doktorarbeit/'>Dissertation schreiben</a> 
+					<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=48f2cc3e4f1be8840512272ebd9b932966744aaf'>
+					</script>
+				</div>
+				<div class="maps-daten">
+					<h2><em>EMPFOHLENE ANFAHRTSWEGE MIT DEM PKW</em></h2>
+					<ul>
+						<li>aus Fahrtrichtung Köln: A1 bis Autobahn-Ende</li>
+						<li>aus Fahrtrichtung Trier/ Luxemburg: A48 bis Autobahn-Abfahrt Ulmen</li>
+						<li>aus Fahrtrichtung Koblenz: A61 bis Autobahn-Abfahrt Wehr</li>
+					</ul>
+				</div>
+			</div>
+		</section>
     </main>
     <footer>
       <div class="footer-logo">Nordschleife</div>
