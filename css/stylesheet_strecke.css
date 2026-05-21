@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --grünehölle: #0f7216 ;
+    --dunkelrot: #922b21 ;
+    --gelb: #f1c40f ;
+    --bg: #0a0a0a ;
+    --oberfläche: #111111 ;
+    --oberfläche2: #1a1a1a ;
+    --border: #2a2a2a ;
+    --text: #e8e8e0 ;
+    --muted: #888880 ;
+    --strecke: #222 ;
+}
+
+html {
+    scroll-behavior: smooth ;
+}
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family:'Elms Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--grünehölle);
+}
+.nav-logo a {
+    font-family:'Cal Sans', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+.nav-links a {
+    font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.nav-links a:hover {
+    color: var(--text);
+}
+
+#strecke {
+	background: var(--oberfläche);
+}
+
+section {padding: 7rem 3rem;}
+
+.section-label {
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
+    color: var(--grünehölle);
+    margin-bottom: 1.2rem;
+}
+.section-title {
+    font-family:'Cal Sans', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+}
+.footer-logo {
+    font-family:'Cal Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grünehölle);
+}
+footer p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+footer a {
+    text-decoration: none;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+
+
+#anreise {
+	background: var(--oberfläche)
+}
+
+.maps {
+	display: flex;
+	justify-content: space-between;
+}
+
+.maps-map iframe {
+	border: solid 2px;
+	border-radius: 15px;
+	border-color: var(--oberfläche2);
+}
+
+.maps-daten {
+	line-height: 3.5;
+	font-size: 1.2em;
+}
+
+.maps-daten h2 {
+	color: var(--gelb);
+}
+
+@media (max-width: 600px) {
+  .wetter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .oben { padding: 0 1.5rem 4rem; }
+    .sectors-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .rekorde-table th:nth-child(3),
+    .rekorde-table td:nth-child(3) { display: none; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+}

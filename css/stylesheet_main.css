@@ -1,4 +1,3 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -94,8 +93,10 @@ nav {
 }
 .oben-bg-bild {
     margin-top: 150px;
-    max-width: 25%;
+    
     max-height: auto;
+	opacity: 50%;
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 .oben-nbr {
@@ -327,8 +328,8 @@ blockquote cite {
 }
 
 .wetter-cell {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--oberfläche);
+  border: 1px solid var(--oberfläche2);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -365,11 +366,7 @@ blockquote cite {
   text-align: right;
 }
 
-@media (max-width: 600px) {
-  .wetter-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 
 footer {
     border-top: 1px solid var(--border);
@@ -397,6 +394,37 @@ footer a {
     font-size: 0.78rem;
     color: var(--muted);
     letter-spacing: 0.05em;
+}
+
+
+#anreise {
+	background: var(--oberfläche)
+}
+
+.maps {
+	display: flex;
+	justify-content: space-between;
+}
+
+.maps-map iframe {
+	border: solid 2px;
+	border-radius: 15px;
+	border-color: var(--oberfläche2);
+}
+
+.maps-daten {
+	line-height: 3.5;
+	font-size: 1.2em;
+}
+
+.maps-daten h2 {
+	color: var(--gelb);
+}
+
+@media (max-width: 600px) {
+  .wetter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
