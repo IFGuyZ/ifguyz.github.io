@@ -403,13 +403,21 @@ footer a {
 
 .maps {
 	display: flex;
-	justify-content: space-between;
+	align-items: center
+	padding: 1em;
 }
 
 .maps-map iframe {
 	border: solid 2px;
 	border-radius: 15px;
 	border-color: var(--oberfläche2);
+}
+
+.maps-map a {
+	opacity: 0;
+	user-select: none;
+	pointer-events: none;
+	cursor: default;
 }
 
 .maps-daten {

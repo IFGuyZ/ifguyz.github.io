@@ -6,8 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nürburgring Nordschleife</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   </head>
   
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+   <script src="js/leaflet-ajax-2.1.0/dist/leaflet.ajax.min.js"></script>
   <body>   
     <header>
       <nav>
@@ -27,9 +30,46 @@
 		<div class="divider"></div>
 		
 		<section id="strecke">
-			<div class="strecke_bild">
-			<img src="img/SVG/NBR.svg">
-			</div>
+			<div id="intkarte"></div>
+			
+			<script>
+				var map = L.map('intkarte').setView([50.365558, 6.918898], 13);
+				
+				var geojsonFeature = {
+					"type": "Feature",
+					"properties": {
+						"name": "Coors Field",
+						"amenity": "Baseball Stadium",
+						"popupContent": "This is where the Rockies play!"
+					},
+					"geometry": {
+						"type": "Point",
+						"coordinates": [-104.99404, 39.75621]
+					}
+				};
+				
+			
+				L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					maxZoom: 19,
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+				}).addTo(map);
+				
+				L.geoJSON(geojsonFeature).addTo(map);
+				
+				var district_boundary = new L.geoJson();
+				district_boundary.addTo(map);
+
+				$.ajax({
+					dataType: "json",
+					url: "data/streckenabschnitte_nordschleife.geojson",
+					success: function(data) {
+						$(data.features).each(function(key, data) {
+						district_boundary.addData(data);
+						});
+					}
+				}).error(function() {});
+			</script>
+			
 		</section>
     </main>
     <footer>
