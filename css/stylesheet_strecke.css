@@ -97,7 +97,7 @@ section {padding: 7rem 3rem;}
 }
 
 #intkarte {
-	height: 400px;
+	height: 1000px;
 }
 
 footer {
@@ -126,22 +126,4 @@ footer a {
     font-size: 0.78rem;
     color: var(--muted);
     letter-spacing: 0.05em;
-}
-
-
-@media (max-width: 600px) {
-  .wetter-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .oben { padding: 0 1.5rem 4rem; }
-    .sectors-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .rekorde-table th:nth-child(3),
-    .rekorde-table td:nth-child(3) { display: none; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; }
 }

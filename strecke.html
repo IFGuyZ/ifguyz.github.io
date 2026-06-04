@@ -35,39 +35,28 @@
 			<script>
 				var map = L.map('intkarte').setView([50.365558, 6.918898], 13);
 				
-				var geojsonFeature = {
-					"type": "Feature",
-					"properties": {
-						"name": "Coors Field",
-						"amenity": "Baseball Stadium",
-						"popupContent": "This is where the Rockies play!"
-					},
-					"geometry": {
-						"type": "Point",
-						"coordinates": [-104.99404, 39.75621]
-					}
-				};
+
 				
 			
 				L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 					maxZoom: 19,
 					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 				}).addTo(map);
-				
-				L.geoJSON(geojsonFeature).addTo(map);
-				
-				var district_boundary = new L.geoJson();
-				district_boundary.addTo(map);
 
-				$.ajax({
-					dataType: "json",
-					url: "data/streckenabschnitte_nordschleife.geojson",
-					success: function(data) {
-						$(data.features).each(function(key, data) {
-						district_boundary.addData(data);
-						});
-					}
-				}).error(function() {});
+				fetch("data/streckenabschnitte_nordschleife.geojson")
+  					.then(response => response.json())
+  					.then(data => {
+   						district_boundary.addData(data);
+  					})
+  					.catch(error => console.error(error));
+
+				var district_boundary = new L.geoJSON(null, {
+    				onEachFeature: function(feature, layer) {
+        				if (feature.properties && feature.properties.name) {
+            				layer.bindPopup(feature.properties.name);
+        					}
+    					}
+				}).addTo(map);
 			</script>
 			
 		</section>

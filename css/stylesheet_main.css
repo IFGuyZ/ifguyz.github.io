@@ -277,12 +277,12 @@ blockquote cite {
 }
 
 #rekorde { background: var(--oberfläche); }
-.rekorde-table {
+.rekorde-tabelle {
     width: 100%;
     border-collapse: collapse;
     margin-top: 3rem;
 }
-.rekorde-table th {
+.rekorde-tabelle th {
     font-weight: 600;
     font-size: 0.7rem;
     letter-spacing: 0.25em;
@@ -292,19 +292,19 @@ blockquote cite {
     padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--border);
 }
-.rekorde-table td {
+.rekorde-tabelle td {
     padding: 1.2rem 1.5rem;
     border-bottom: 1px solid var(--border);
     font-size: 0.95rem;
 }
-.rekorde-table tr:hover td { background: rgba(255,255,255,0.02); }
+.rekorde-tabelle tr:hover td { background: rgba(255,255,255,0.02); }
 .zeit {
     font-weight: 700;
     font-size: 1.3rem;
     color: var(--gelb);
     letter-spacing: 0.03em;
 }
-.rekord-car { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+.rekord-auto { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
 .badge {
     display: inline-block;
     font-size: 0.68rem;
@@ -403,7 +403,7 @@ footer a {
 
 .maps {
 	display: flex;
-	align-items: center
+	align-items: center;
 	padding: 1em;
 }
 
@@ -418,7 +418,7 @@ footer a {
 	user-select: none;
 	pointer-events: none;
 	cursor: default;
-}
+} /*    (psst) damit habe ich definitiv nicht Werbung umgangen die beim Code dabei war (psst)   (https://embedmaps.org/) */
 
 .maps-daten {
 	line-height: 3.5;
