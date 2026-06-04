@@ -366,37 +366,6 @@ blockquote cite {
   text-align: right;
 }
 
-
-
-footer {
-    border-top: 1px solid var(--border);
-    padding: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--surface);
-}
-.footer-logo {
-    font-family:'Cal Sans', sans-serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--grünehölle);
-}
-footer p {
-    font-size: 0.78rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-}
-footer a {
-    text-decoration: none;
-    font-size: 0.78rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-}
-
-
 #anreise {
 	background: var(--oberfläche)
 }
@@ -429,19 +398,37 @@ footer a {
 	color: var(--gelb);
 }
 
-@media (max-width: 600px) {
-  .wetter-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+#intkarte {
+	height: 1000px;
 }
 
-@media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .oben { padding: 0 1.5rem 4rem; }
-    .sectors-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .rekorde-table th:nth-child(3),
-    .rekorde-table td:nth-child(3) { display: none; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; }
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
 }
+.footer-logo {
+    font-family:'Cal Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grünehölle);
+}
+footer p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+footer a {
+    text-decoration: none;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+
+
